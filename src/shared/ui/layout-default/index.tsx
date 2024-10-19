@@ -1,0 +1,32 @@
+import { Flex } from '@chakra-ui/react'
+import { ReactNode } from 'react'
+import { MainLayout } from '../layout-main'
+import { useMatch } from 'react-router-dom'
+import { PageRoutes } from 'shared/config/pages'
+
+export const DefaultLayout = ({ children }: { children: ReactNode }) => {
+  const isMain = useMatch(PageRoutes.MainPage)
+
+  return (
+    <Flex
+      w="100%"
+      h="100%"
+      // bgColor="yellow.100"
+      bg='linear-gradient(white, transparent 1px), linear-gradient(90deg, white, transparent 1px), #FFC567'
+      bgSize='73px 73px'
+      bgPosition='center 30px'
+      direction="column"
+      position="relative"
+      justifyContent="center"
+    >
+      {isMain && (
+        <MainLayout>
+          {children}
+        </MainLayout>
+      )}
+      {
+        
+      }
+    </Flex>
+  )
+}

@@ -1,0 +1,39 @@
+@font-face {
+  font-family: 'Baloo Cyrillic';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('./baloo_cyrillic.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'NEXT ART';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url('./NEXT\ ART_Light.otf') format('otf');
+}
+
+@font-face {
+  font-family: 'NEXT ART';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('./NEXT\ ART_Regular.otf') format('otf');
+}
+
+@font-face {
+  font-family: 'NEXT ART';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('./NEXT\ ART_SemiBold.otf') format('otf');
+}
+
+@font-face {
+  font-family: 'NEXT ART';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('./NEXT\ ART_Bold.otf') format('otf');
+}

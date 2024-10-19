@@ -1,0 +1,5 @@
+export { Ring } from './Ring'
+export { RedSquare } from './RedSquare'
+export { Circle } from './Circle'
+export { PinkSquare } from './PinkSquare'
+export { BlueTriangle } from './BlueTriangle'
