@@ -1,8 +1,28 @@
-import { Text } from "shared/ui"
+import {
+    ContainerPage,
+    Grid, 
+    GameCard,
+    LoadingCard} from "shared/ui"
+import { gamesList } from "entities/games"
 
 const Games = () => {
     return (
-        <Text>sdjlvnsojvnsjdvn</Text>
+        <ContainerPage>
+            <Grid
+                m='0 250px'
+                templateColumns={
+                    'minmax(270px, 270px) minmax(270px, 270px) minmax(270px, 270px)'
+                }
+                columnGap='60px'
+                rowGap='45px'
+                pb='7px'
+            >
+                {gamesList.map((game) => (
+                    <GameCard {...game} />
+                ))}
+                <LoadingCard />
+            </Grid>
+        </ContainerPage>
     )
 }
 

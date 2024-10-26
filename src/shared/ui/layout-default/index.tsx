@@ -1,17 +1,20 @@
 import { Flex } from '@chakra-ui/react'
 import { ReactNode } from 'react'
-import { MainLayout } from '../layout-main'
+import {
+  MainLayout,
+  GameLayout
+} from '..'
 import { useMatch } from 'react-router-dom'
 import { PageRoutes } from 'shared/config/pages'
 
 export const DefaultLayout = ({ children }: { children: ReactNode }) => {
   const isMain = useMatch(PageRoutes.MainPage)
+  const isGames = useMatch(PageRoutes.Games)
 
   return (
     <Flex
       w="100%"
       h="100%"
-      // bgColor="yellow.100"
       bg='linear-gradient(white, transparent 1px), linear-gradient(90deg, white, transparent 1px), #FFC567'
       bgSize='73px 73px'
       bgPosition='center 30px'
@@ -24,9 +27,11 @@ export const DefaultLayout = ({ children }: { children: ReactNode }) => {
           {children}
         </MainLayout>
       )}
-      {
-        
-      }
+      {isGames && (
+        <GameLayout>
+          {children}
+        </GameLayout>
+      )}
     </Flex>
   )
 }
