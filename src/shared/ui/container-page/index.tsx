@@ -1,11 +1,18 @@
 import { ReactNode } from 'react'
-import { Flex, Heading } from '..'
+import { Box, Flex, Heading, Tooltip } from '..'
+import { DefaultAvatar } from 'shared/iconpack'
+import { useNavigate } from 'react-router-dom'
+import { PageRoutes } from 'shared/config/pages'
 
 export const ContainerPage = ({
+  avatar = false,
   children
 }: {
+  avatar?: boolean
   children: ReactNode
 }) => {
+  const navigate = useNavigate()
+
   return (
     <Flex
       w="100%"
@@ -14,9 +21,29 @@ export const ContainerPage = ({
       alignItems='center'
       overflow='scroll'
     >
-      <Heading fontSize='128px' m='20px 0 30px 0'>
-        ReGames
-      </Heading>
+      <Flex w='100%' alignItems='center'>
+        <Heading flex={1} textAlign='center' fontSize='128px'>
+          ReGames
+        </Heading>
+        {avatar && (
+          <Tooltip
+            right='80px'
+            placement='bottom'
+            label='Хочешь сохранить свой результаты и побороться
+              за первое место в турнирной таблице, тогда тебе нужно
+              зарегестрироваться или войти в уже существующий аккаунт'
+          >
+            <Box
+              cursor='pointer'
+              position='absolute'
+              right='90px'
+              onClick={() => navigate(PageRoutes.Registration)}
+            >
+              <DefaultAvatar />
+            </Box>
+          </Tooltip>
+        )}
+      </Flex>
       {children}
     </Flex>
   )

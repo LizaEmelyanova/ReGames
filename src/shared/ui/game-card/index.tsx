@@ -6,11 +6,9 @@ import {
     Flex,
     PlayButton,
 } from '..'
-
 import { GameData } from 'entities/games/types'
 
 export const GameCard = ({
-    id,
     title,
     image,
     btnColor,
@@ -18,7 +16,6 @@ export const GameCard = ({
 }: GameData) => {
     return (
         <Card
-            key={id}
             direction='column'
             overflow='hidden'
             border='1px solid black'

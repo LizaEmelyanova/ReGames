@@ -2,7 +2,9 @@ import { Flex } from '@chakra-ui/react'
 import { ReactNode } from 'react'
 import {
   MainLayout,
-  GameLayout
+  GameLayout,
+  RegistrationLayout,
+  LoginLayout,
 } from '..'
 import { useMatch } from 'react-router-dom'
 import { PageRoutes } from 'shared/config/pages'
@@ -10,6 +12,8 @@ import { PageRoutes } from 'shared/config/pages'
 export const DefaultLayout = ({ children }: { children: ReactNode }) => {
   const isMain = useMatch(PageRoutes.MainPage)
   const isGames = useMatch(PageRoutes.Games)
+  const isRegistration = useMatch(PageRoutes.Registration)
+  const isLogin = useMatch(PageRoutes.Login)
 
   return (
     <Flex
@@ -31,6 +35,16 @@ export const DefaultLayout = ({ children }: { children: ReactNode }) => {
         <GameLayout>
           {children}
         </GameLayout>
+      )}
+      {isRegistration && (
+        <RegistrationLayout>
+          {children}
+        </RegistrationLayout>
+      )}
+      {isLogin && (
+        <LoginLayout>
+          {children}
+        </LoginLayout>
       )}
     </Flex>
   )
