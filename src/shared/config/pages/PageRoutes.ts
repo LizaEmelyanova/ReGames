@@ -4,4 +4,5 @@ export const PageRoutes = {
     Registration: '/registration',
     Login: '/login',
     Saper: '/saper',
+    Snake: '/snake',
 } as const

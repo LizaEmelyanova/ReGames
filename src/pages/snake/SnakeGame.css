@@ -1,0 +1,7 @@
+.board {
+  background-color: rgb(67, 151, 99);
+  border-radius: 15px;
+  border: 1px solid black;
+  /* Четкая черная тень вниз и вправо */
+  box-shadow: 5px 5px 0px 0px black; 
+}

@@ -15,7 +15,7 @@ export const gamesList: GameData[] = [
         image: './games/snake.png',
         btnColor: 'yellow.100',
         btnBgColor: 'red.100',
-        link: '/saper',
+        link: '/snake',
     },
     {
         id: '2',

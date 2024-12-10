@@ -3,24 +3,15 @@ import './App.css'
 import {
   ContainerPage,
   Flex,
-  Text,
-  chakra,
-  Button
+  GameOverModal,
+  Score
 } from 'shared/ui'
-import { useNavigate } from 'react-router-dom'
-import { PageRoutes } from 'shared/config/pages';
 
 interface Cell {
   isMine: boolean;
   isOpen: boolean;
   isFlagged: boolean;
   adjacentMines: number;
-}
-
-interface GameOverMessageProps {
-  message: string;
-  score: number;
-  onRestart: () => void;
 }
 
 interface BoardProps {
@@ -78,12 +69,10 @@ const Saper = () => {
         justifyContent='center'
         alignItems='center'
       >
-        <Text fontSize='40px' mb='38px'>
-          Баллы <chakra.span fontWeight={'bold'}>{score}</chakra.span>
-        </Text>
+        <Score score={score} />
         <Board board={board} onCellClick={handleCellClick} onRightClick={handleRightClick} />
         {(gameOver || gameWon) && (
-          <GameOverMessage 
+          <GameOverModal 
             message={gameWon ? "Победа!" : "Игра окончена"}
             score={score}
             onRestart={resetGame}
@@ -99,50 +88,6 @@ const Saper = () => {
     setGameOver(false);
     setGameWon(false);
   }
-}
-
-
-function GameOverMessage({ message, score, onRestart }: GameOverMessageProps) {
-  const navigate = useNavigate()
-
-  return (
-    <Flex
-      p='30px 105px'
-      bg='white'
-      borderRadius='12px'
-      border='1px solid black'
-      box-shadow='5px 5px 0px 0px black'
-      flexDir='column'
-      alignItems='center'
-      justifyContent='center'
-      pos='absolute'
-    >
-        <Text fontSize='24px' mb='20px'>{message}</Text>
-        <Text fontSize='14px' mb='40px'>Вы набрали {score} баллов</Text>
-        <Flex gap='10px'>
-          <Button
-            bg='transparent'
-            color='black'
-            border='none'
-            onClick={() => navigate(PageRoutes.Games)}
-          >
-            Выйти
-          </Button>
-          <Button
-            bg='violet.200'
-            _hover={{
-              bg: 'violet.300'
-            }}
-            _active={{
-              bg: 'violet.300'
-            }}
-            onClick={onRestart}
-          >
-            Играть
-          </Button>
-        </Flex>
-    </Flex>
-  );
 }
 
 function Board({ board, onCellClick, onRightClick }: BoardProps) {

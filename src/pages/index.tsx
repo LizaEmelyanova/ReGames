@@ -8,6 +8,7 @@ const Games = lazy(() => import('./games'))
 const Registration = lazy(() => import('./registration'))
 const Login = lazy(() => import('./login'))
 const Saper = lazy(() => import('./saper'))
+const Snake = lazy(() => import('./snake'))
 
 export default function Routing() {
     return (
@@ -41,6 +42,12 @@ export default function Routing() {
                     path={PageRoutes.Saper}
                     element={
                         <Saper />
+                    }
+                />
+                <Route
+                    path={PageRoutes.Snake}
+                    element={
+                        <Snake />
                     }
                 />
             </Routes>
