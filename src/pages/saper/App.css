@@ -1,0 +1,157 @@
+/* Подключаем файлы шрифта с разными стилями */
+@font-face {
+  font-family: 'Next Art';
+  src: url('./fonts/Next Art/NEXT ART_Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Next Art';
+  src: url('./fonts/Next Art/NEXT ART_SemiBold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Next Art';
+  src: url('./fonts/Next Art/NEXT ART_Bold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+.score-title {
+  font-family: 'Next Art', serif;
+  font-weight: normal; /* Нежирный шрифт для надписи "Баллы:" */
+  color: black;
+  font-size: 25pt;
+}
+
+.score-message {
+  font-family: 'Next Art', serif;
+  font-weight: normal; /* Нежирный шрифт для надписи "Баллы:" */
+  color: black;
+  font-size: 10pt;
+}
+
+.score-bold {
+  font-family: 'Next Art', serif;
+  font-weight: bold; /* Жирный шрифт для числа баллов */
+  color: black;
+}
+
+.cell span {
+  font-family: 'Next Art', serif;
+  font-size: 20pt;
+  color: black;
+}
+
+/* Стиль для клеток верхнего ряда */
+.board .cell:nth-child(-n+10) {
+  border-top: none; /* Убираем верхнюю обводку */
+}
+
+/* Стиль для клеток нижнего ряда */
+.board .cell:nth-last-child(-n+10) {
+  border-bottom: none; /* Убираем нижнюю обводку */
+}
+
+/* Стиль для клеток первого столбца */
+.board .cell:nth-child(10n+1) {
+  border-left: none; /* Убираем левую обводку */
+}
+
+/* Стиль для клеток последнего столбца */
+.board .cell:nth-child(10n) {
+  border-right: none; /* Убираем правую обводку */
+}
+
+body {
+  background-color: rgb(246, 198, 118); /* yellow */
+  margin: 0; /* Убираем отступы по умолчанию */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Центрируем по вертикали */
+}
+
+.App {
+  text-align: center;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(10, 40px); /* 10 квадратных клеток по 40px каждая */
+  grid-gap: 0; /* убираем расстояние между клетками */
+  margin: 0 auto;
+  padding: 25px 50px; /* Увеличиваем боковые отступы */
+  background-color: rgb(59, 139, 208); /* blue */
+  border-radius: 15px;
+  border: 1px solid black;
+  /* Четкая черная тень вниз и вправо */
+  box-shadow: 5px 5px 0px 0px black; 
+}
+
+.cell {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent; /* прозрачный фон для клеток */
+  border: 0.7px solid black; /* тонкая черная линия */
+  cursor: default; /* убираем курсор указателя */
+  position: relative;
+}
+
+.cell.open {
+  background-color: rgb(236, 132, 167); /* pink */
+}
+
+.cell:active {
+  background-color: rgb(220, 220, 220); /* цвет при нажатии */
+}
+
+.cell.flagged {
+  background-color: transparent; /* прозрачный фон для флажка */
+}
+
+.mine {
+  width: 20px; /* Размер бомбы */
+  height: 20px; /* Размер бомбы */
+  background-color: black; /* Цвет бомбы */
+  border-radius: 50%; /* Круглая форма */
+}
+
+.game-over-message {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px 60px;
+  border-radius: 15px;
+  border: 1px solid black;
+  box-shadow: 5px 5px 0px 0px black; 
+  text-align: center;
+  font-family: 'Next Art', serif;
+  font-size: 18pt;
+  color: black;
+}
+
+.game-over-message p {
+  margin: 0;
+  margin-bottom: 20px;
+}
+
+.game-over-message button {
+  padding: 10px 30px;
+  font-size: 10pt;
+  background-color: rgb(67, 45, 152);
+  border: 1px solid black;
+  color: white;
+  font-family: 'Next Art', serif;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
