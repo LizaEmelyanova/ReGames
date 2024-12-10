@@ -5,8 +5,9 @@ import { DefaultLayout } from '../shared/ui'
 
 const MainPage = lazy(() => import('./main-page'))
 const Games = lazy(() => import('./games'))
-const Registration = lazy(() => import ('./registration'))
-const Login = lazy(() => import ('./login'))
+const Registration = lazy(() => import('./registration'))
+const Login = lazy(() => import('./login'))
+const Saper = lazy(() => import('./saper'))
 
 export default function Routing() {
     return (
@@ -34,6 +35,12 @@ export default function Routing() {
                     path={PageRoutes.Login}
                     element={
                         <Login />
+                    }
+                />
+                <Route
+                    path={PageRoutes.Saper}
+                    element={
+                        <Saper />
                     }
                 />
             </Routes>

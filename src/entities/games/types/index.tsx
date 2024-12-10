@@ -3,5 +3,6 @@ export interface GameData {
     title: string,
     image: string,
     btnColor: string,
-    btnBgColor: string
+    btnBgColor: string,
+    link: string
 }

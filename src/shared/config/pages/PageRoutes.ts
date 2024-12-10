@@ -3,4 +3,5 @@ export const PageRoutes = {
     Games: '/games',
     Registration: '/registration',
     Login: '/login',
+    Saper: '/saper',
 } as const

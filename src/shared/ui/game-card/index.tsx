@@ -7,13 +7,17 @@ import {
     PlayButton,
 } from '..'
 import { GameData } from 'entities/games/types'
+import { useNavigate } from 'react-router-dom'
 
 export const GameCard = ({
     title,
     image,
     btnColor,
-    btnBgColor
+    btnBgColor,
+    link
 }: GameData) => {
+    const navigate = useNavigate()
+
     return (
         <Card
             direction='column'
@@ -46,7 +50,7 @@ export const GameCard = ({
                         <PlayButton
                             color={btnColor}
                             bgColor={btnBgColor}
-                            onClick={() => console.log(title)}
+                            onClick={() => navigate(link)}
                         />
                     </Flex>
                 </Flex>

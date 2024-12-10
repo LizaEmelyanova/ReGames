@@ -14,6 +14,7 @@ export const DefaultLayout = ({ children }: { children: ReactNode }) => {
   const isGames = useMatch(PageRoutes.Games)
   const isRegistration = useMatch(PageRoutes.Registration)
   const isLogin = useMatch(PageRoutes.Login)
+  const isGame = useMatch(PageRoutes.Saper)
 
   return (
     <Flex
@@ -45,6 +46,9 @@ export const DefaultLayout = ({ children }: { children: ReactNode }) => {
         <LoginLayout>
           {children}
         </LoginLayout>
+      )}
+      {isGame && (
+        children
       )}
     </Flex>
   )

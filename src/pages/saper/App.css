@@ -20,26 +20,6 @@
   font-style: normal;
 }
 
-.score-title {
-  font-family: 'Next Art', serif;
-  font-weight: normal; /* Нежирный шрифт для надписи "Баллы:" */
-  color: black;
-  font-size: 25pt;
-}
-
-.score-message {
-  font-family: 'Next Art', serif;
-  font-weight: normal; /* Нежирный шрифт для надписи "Баллы:" */
-  color: black;
-  font-size: 10pt;
-}
-
-.score-bold {
-  font-family: 'Next Art', serif;
-  font-weight: bold; /* Жирный шрифт для числа баллов */
-  color: black;
-}
-
 .cell span {
   font-family: 'Next Art', serif;
   font-size: 20pt;
@@ -64,19 +44,6 @@
 /* Стиль для клеток последнего столбца */
 .board .cell:nth-child(10n) {
   border-right: none; /* Убираем правую обводку */
-}
-
-body {
-  background-color: rgb(246, 198, 118); /* yellow */
-  margin: 0; /* Убираем отступы по умолчанию */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh; /* Центрируем по вертикали */
-}
-
-.App {
-  text-align: center;
 }
 
 .board {
@@ -121,37 +88,4 @@ body {
   height: 20px; /* Размер бомбы */
   background-color: black; /* Цвет бомбы */
   border-radius: 50%; /* Круглая форма */
-}
-
-.game-over-message {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: white;
-  padding: 20px 60px;
-  border-radius: 15px;
-  border: 1px solid black;
-  box-shadow: 5px 5px 0px 0px black; 
-  text-align: center;
-  font-family: 'Next Art', serif;
-  font-size: 18pt;
-  color: black;
-}
-
-.game-over-message p {
-  margin: 0;
-  margin-bottom: 20px;
-}
-
-.game-over-message button {
-  padding: 10px 30px;
-  font-size: 10pt;
-  background-color: rgb(67, 45, 152);
-  border: 1px solid black;
-  color: white;
-  font-family: 'Next Art', serif;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
 }

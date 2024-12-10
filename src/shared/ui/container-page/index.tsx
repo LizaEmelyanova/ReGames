@@ -6,9 +6,11 @@ import { PageRoutes } from 'shared/config/pages'
 
 export const ContainerPage = ({
   avatar = false,
+  logo = true,
   children
 }: {
   avatar?: boolean
+  logo?: boolean
   children: ReactNode
 }) => {
   const navigate = useNavigate()
@@ -22,9 +24,11 @@ export const ContainerPage = ({
       overflow='scroll'
     >
       <Flex w='100%' alignItems='center'>
-        <Heading flex={1} textAlign='center' fontSize='128px'>
-          ReGames
-        </Heading>
+        {logo && (
+          <Heading flex={1} textAlign='center' fontSize='128px'>
+            ReGames
+          </Heading>
+        )}
         {avatar && (
           <Tooltip
             right='80px'
