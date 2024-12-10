@@ -18,12 +18,20 @@ export const ContainerPage = ({
   return (
     <Flex
       w="100%"
-      height="100%"
+      h="100%"
       flexDirection="column"
       alignItems='center'
       overflow='scroll'
     >
-      <Flex w='100%' alignItems='center'>
+      <Flex
+        w='100%'
+        p='0 90px'
+        alignItems='center'
+        justifyContent='space-between'
+      >
+        {avatar && (
+          <Box w='80px' h='80px' />
+        )}
         {logo && (
           <Heading flex={1} textAlign='center' fontSize='128px'>
             ReGames
@@ -39,8 +47,6 @@ export const ContainerPage = ({
           >
             <Box
               cursor='pointer'
-              position='absolute'
-              right='90px'
               onClick={() => navigate(PageRoutes.Registration)}
             >
               <DefaultAvatar />
