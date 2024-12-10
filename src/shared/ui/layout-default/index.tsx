@@ -5,6 +5,7 @@ import {
   GameLayout,
   RegistrationLayout,
   LoginLayout,
+  PasswordRecoveryLayout,
 } from '..'
 import { useMatch } from 'react-router-dom'
 import { PageRoutes } from 'shared/config/pages'
@@ -14,6 +15,7 @@ export const DefaultLayout = ({ children }: { children: ReactNode }) => {
   const isGames = useMatch(PageRoutes.Games)
   const isRegistration = useMatch(PageRoutes.Registration)
   const isLogin = useMatch(PageRoutes.Login)
+  const isPasswordRecovery = useMatch(PageRoutes.PasswordRecovery)
   const isSaper = useMatch(PageRoutes.Saper)
   const isSnake = useMatch(PageRoutes.Snake)
 
@@ -47,6 +49,11 @@ export const DefaultLayout = ({ children }: { children: ReactNode }) => {
         <LoginLayout>
           {children}
         </LoginLayout>
+      )}
+      {isPasswordRecovery && (
+        <PasswordRecoveryLayout>
+          {children}
+        </PasswordRecoveryLayout>
       )}
       {(isSaper || isSnake) && (
         children

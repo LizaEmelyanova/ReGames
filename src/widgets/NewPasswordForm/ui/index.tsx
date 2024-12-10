@@ -1,3 +1,5 @@
+import { useNavigate } from 'react-router-dom'
+import { PageRoutes } from 'shared/config/pages'
 import {
     Text,
     Flex,
@@ -9,10 +11,8 @@ import {
     Box,
     Button,
 } from 'shared/ui'
-import { useNavigate } from 'react-router-dom'
-import { PageRoutes } from 'shared/config/pages'
 
-function LoginForm() {
+function NewPasswordForm() {
     const navigate = useNavigate()
 
     return (
@@ -22,7 +22,7 @@ function LoginForm() {
                 fontSize='26px'
                 mb='7px'
             >
-                Вход
+                Восстановление пароля
             </Text>
             <chakra.form>
                 <Flex
@@ -43,7 +43,7 @@ function LoginForm() {
                           color='black'
                           m='0 0 5px 5px'
                         >
-                            Ник
+                            Проверочный код
                         </FormLabel>
                         <Input
                           id="last_name"
@@ -63,7 +63,7 @@ function LoginForm() {
                           color='black'
                           m='0 0 5px 5px'
                         >
-                            Пароль
+                            Новый пароль
                         </FormLabel>
                         <Input
                           id="last_name"
@@ -75,27 +75,40 @@ function LoginForm() {
                             {/* {formik.errors.last_name} */}
                         </FormErrorMessage>
                     </FormControl>
-                    <Flex gap='20px' mt='15px' alignItems='center' >
-                        <Button
-                            bg='violet.200'
-                            _hover={{
-                                bg: 'violet.300'
-                            }}
+                    <FormControl>
+                        <FormLabel
+                          htmlFor="last_name"
+                          fontSize={'16px'}
+                          fontWeight={400}
+                          color='black'
+                          m='0 0 5px 5px'
                         >
-                            Войти
-                        </Button>
-                        <Text
-                            fontSize='16px'
-                            cursor='pointer'
-                            onClick={() => navigate(PageRoutes.PasswordRecovery)}
-                        >
-                            Забыли пароль?
-                        </Text>
-                    </Flex>
+                            Повторите пароль
+                        </FormLabel>
+                        <Input
+                          id="last_name"
+                          name="last_name"
+                          type={'text'}
+                        //   value={formik.values.last_name}
+                        />
+                        <FormErrorMessage>
+                            {/* {formik.errors.last_name} */}
+                        </FormErrorMessage>
+                    </FormControl>
+                    <Button
+                        mt='15px'
+                        bg='blue.100'
+                        _hover={{
+                            bg: 'blue.200'
+                        }}
+                        onClick={() => navigate(PageRoutes.Login)}
+                    >
+                        Отправить
+                    </Button>
                 </Flex>
             </chakra.form>
         </Box>
     )
 }
 
-export { LoginForm }
+export { NewPasswordForm }
