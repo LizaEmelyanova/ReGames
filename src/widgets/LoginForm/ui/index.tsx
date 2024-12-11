@@ -81,6 +81,7 @@ function LoginForm() {
                             _hover={{
                                 bg: 'violet.300'
                             }}
+                            onClick={() => navigate(PageRoutes.Profile)}
                         >
                             Войти
                         </Button>

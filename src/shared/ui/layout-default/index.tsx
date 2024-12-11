@@ -6,6 +6,7 @@ import {
   RegistrationLayout,
   LoginLayout,
   PasswordRecoveryLayout,
+  ProfileLayout,
 } from '..'
 import { useMatch } from 'react-router-dom'
 import { PageRoutes } from 'shared/config/pages'
@@ -16,8 +17,11 @@ export const DefaultLayout = ({ children }: { children: ReactNode }) => {
   const isRegistration = useMatch(PageRoutes.Registration)
   const isLogin = useMatch(PageRoutes.Login)
   const isPasswordRecovery = useMatch(PageRoutes.PasswordRecovery)
+  const isProfile = useMatch(PageRoutes.Profile)
+
   const isSaper = useMatch(PageRoutes.Saper)
   const isSnake = useMatch(PageRoutes.Snake)
+  const isGame = isSaper || isSnake
 
   return (
     <Flex
@@ -55,7 +59,12 @@ export const DefaultLayout = ({ children }: { children: ReactNode }) => {
           {children}
         </PasswordRecoveryLayout>
       )}
-      {(isSaper || isSnake) && (
+      {isProfile && (
+        <ProfileLayout>
+          {children}
+        </ProfileLayout>
+      )}
+      {(isGame) && (
         children
       )}
     </Flex>

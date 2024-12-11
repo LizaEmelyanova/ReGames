@@ -1,16 +1,19 @@
 import { ReactNode } from 'react'
-import { Box, Flex, Heading, Tooltip } from '..'
+import { Box, Flex, Heading, IconButton, Tooltip } from '..'
 import { DefaultAvatar } from 'shared/iconpack'
 import { useNavigate } from 'react-router-dom'
 import { PageRoutes } from 'shared/config/pages'
+import { Arrow } from 'shared/iconpack/Arrow'
 
 export const ContainerPage = ({
   avatar = false,
   logo = true,
-  children
+  exit = false,
+  children,
 }: {
   avatar?: boolean
   logo?: boolean
+  exit?: boolean
   children: ReactNode
 }) => {
   const navigate = useNavigate()
@@ -22,6 +25,7 @@ export const ContainerPage = ({
       flexDirection="column"
       alignItems='center'
       overflow='scroll'
+      pb='20px'
     >
       <Flex
         w='100%'
@@ -31,6 +35,12 @@ export const ContainerPage = ({
       >
         {avatar && (
           <Box w='80px' h='80px' />
+        )}
+        {exit && (
+          <IconButton
+            Icon={Arrow}
+            onClick={() => navigate(PageRoutes.Games)}
+          />
         )}
         {logo && (
           <Heading flex={1} textAlign='center' fontSize='128px'>

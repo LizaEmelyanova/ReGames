@@ -10,6 +10,7 @@ const Login = lazy(() => import('./login'))
 const Saper = lazy(() => import('./saper'))
 const Snake = lazy(() => import('./snake'))
 const PasswordRecovery = lazy(() => import('./password-recovery'))
+const Profile = lazy(() => import('./profile'))
 
 export default function Routing() {
     return (
@@ -43,6 +44,12 @@ export default function Routing() {
                     path={PageRoutes.PasswordRecovery}
                     element={
                         <PasswordRecovery />
+                    }
+                />
+                <Route
+                    path={PageRoutes.Profile}
+                    element={
+                        <Profile />
                     }
                 />
                 <Route
