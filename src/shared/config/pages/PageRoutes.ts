@@ -5,6 +5,7 @@ export const PageRoutes = {
     Login: '/login',
     PasswordRecovery: '/password-recovery',
     Profile: '/profile',
+    Rating: '/rating',
     Saper: '/saper',
     Snake: '/snake',
 } as const

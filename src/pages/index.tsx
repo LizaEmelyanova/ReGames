@@ -7,10 +7,11 @@ const MainPage = lazy(() => import('./main-page'))
 const Games = lazy(() => import('./games'))
 const Registration = lazy(() => import('./registration'))
 const Login = lazy(() => import('./login'))
-const Saper = lazy(() => import('./saper'))
-const Snake = lazy(() => import('./snake'))
 const PasswordRecovery = lazy(() => import('./password-recovery'))
 const Profile = lazy(() => import('./profile'))
+const Rating = lazy(() => import('./rating'))
+const Saper = lazy(() => import('./saper'))
+const Snake = lazy(() => import('./snake'))
 
 export default function Routing() {
     return (
@@ -50,6 +51,12 @@ export default function Routing() {
                     path={PageRoutes.Profile}
                     element={
                         <Profile />
+                    }
+                />
+                <Route
+                    path={PageRoutes.Rating}
+                    element={
+                        <Rating />
                     }
                 />
                 <Route

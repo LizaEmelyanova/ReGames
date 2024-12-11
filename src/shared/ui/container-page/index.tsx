@@ -8,12 +8,12 @@ import { Arrow } from 'shared/iconpack/Arrow'
 export const ContainerPage = ({
   avatar = false,
   logo = true,
-  exit = false,
+  exit,
   children,
 }: {
   avatar?: boolean
   logo?: boolean
-  exit?: boolean
+  exit?: () => void
   children: ReactNode
 }) => {
   const navigate = useNavigate()
@@ -39,7 +39,7 @@ export const ContainerPage = ({
         {exit && (
           <IconButton
             Icon={Arrow}
-            onClick={() => navigate(PageRoutes.Games)}
+            onClick={exit}
           />
         )}
         {logo && (

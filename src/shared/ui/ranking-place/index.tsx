@@ -1,6 +1,10 @@
+import { useNavigate } from "react-router-dom"
 import { Flex, Text } from ".."
+import { PageRoutes } from "shared/config/pages"
 
 export const RankingPlace = () => {
+    const navigate = useNavigate()
+
     return (
         <Flex
             bg='pink.100'
@@ -11,6 +15,8 @@ export const RankingPlace = () => {
             borderRadius='15px'
             gap='5px'
             p='0 108px 15px'
+            cursor='pointer'
+            onClick={() => navigate(PageRoutes.Rating)}
         >
             <Text
                 fontSize='64px'

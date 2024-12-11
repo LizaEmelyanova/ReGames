@@ -18,6 +18,8 @@ export const DefaultLayout = ({ children }: { children: ReactNode }) => {
   const isLogin = useMatch(PageRoutes.Login)
   const isPasswordRecovery = useMatch(PageRoutes.PasswordRecovery)
   const isProfile = useMatch(PageRoutes.Profile)
+  const isRating = useMatch(PageRoutes.Rating)
+  const isUser = isProfile || isRating
 
   const isSaper = useMatch(PageRoutes.Saper)
   const isSnake = useMatch(PageRoutes.Snake)
@@ -59,12 +61,12 @@ export const DefaultLayout = ({ children }: { children: ReactNode }) => {
           {children}
         </PasswordRecoveryLayout>
       )}
-      {isProfile && (
+      {isUser && (
         <ProfileLayout>
           {children}
         </ProfileLayout>
       )}
-      {(isGame) && (
+      {isGame && (
         children
       )}
     </Flex>

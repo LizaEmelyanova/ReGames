@@ -8,8 +8,8 @@ export const UserInfo = () => {
             alignItems='center'
         >
             <Box
-                w='145px'
-                h='145px'
+                w='130px'
+                h='130px'
                 bg='gray'
                 borderRadius='999px'
                 pos='absolute'
@@ -19,21 +19,22 @@ export const UserInfo = () => {
             <Flex
                 bg='white'
                 borderRadius='15px'
-                p='22px 25px'
+                p='20px'
                 border='1px solid black'
                 minW='861px'
-                gap='195px'
+                gap='190px'
+                justifyContent='center'
             >
                 <Flex
                     flexDir='column'
-                    gap='10px'
+                    gap='5px'
                     alignItems='flex-end'
                 >
-                    <Text fontSize='24px'>
+                    <Text fontSize='20px'>
                         Емельянова Елизавета
                     </Text>
                     <Text
-                        fontSize='20px'
+                        fontSize='18px'
                         fontWeight='light'
                         mr='5px'
                     >
@@ -42,15 +43,16 @@ export const UserInfo = () => {
                 </Flex>
                 <Flex
                     flexDir='column'
-                    gap='10px'
+                    gap='5px'
+                    mr='30px'
                 >
                     <Text
-                        fontSize='20px'
+                        fontSize='18px'
                         fontWeight='light'
                     >
                         Вы с нами уже
                     </Text>
-                    <Text fontSize='24px'>2 года 10 месяцев</Text>
+                    <Text fontSize='22px'>2 года 10 месяцев</Text>
                 </Flex>
             </Flex>
         </Flex>
