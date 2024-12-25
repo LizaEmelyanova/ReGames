@@ -1,0 +1,135 @@
+:root {
+  --background-color: rgb(255, 197, 103);
+  --board-color: rgb(85, 44, 184);
+  --tile-color: rgb(255, 255, 255);
+  --tile-fixed-color: rgb(72, 61, 139);
+  --border-color: black;
+  --hover-color: rgb(233, 181, 172);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.Sudoku {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  background-color: var(--background-color);
+  padding: 50px;
+  height: 100vh;
+}
+
+h1 {
+  font-size: 32px;
+  color: black;
+  margin-bottom: 10px;
+}
+
+h1 strong {
+  color:var(--tile-fixed-color);
+}
+
+.tile {
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  font-size: 32px;
+  font-weight: bold;
+  color: var(--tile-color);
+  background-color: transparent;
+  border: 1px solid var(--border-color);
+}
+
+.tile.initial {
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  font-size: 32px;
+  outline: none;
+  box-shadow: none !important;
+  font-weight: bold;
+  background-color: var(--tile-fixed-color);
+}
+
+.tile:nth-child(3n):not(:nth-child(9n)) {
+  border-right: 2px solid var(--border-color);
+}
+
+.tile:nth-child(n+19):nth-child(-n+27),
+.tile:nth-child(n+46):nth-child(-n+54) {
+  border-bottom: 2px solid var(--border-color);
+}
+
+.tile:nth-child(-n+9) {
+  border-top: none;
+}
+
+.tile:nth-child(n+73):nth-child(-n+81) {
+  border-bottom: none;
+}
+
+.tile:nth-child(9n+1) {
+  border-left: none;
+}
+
+.tile:nth-child(9n) {
+  border-right: none;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  grid-template-rows: repeat(9, 40px);
+  background-color: var(--board-color);
+  border-radius: 15px;
+  box-shadow:5px 5px 0px var(--border-color);
+  padding: 20px;
+}
+
+.interface {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.info-interface input {
+  width: 250px;
+  height: 40px;
+  text-align: center;
+  font-size: 24px;
+  outline: none;
+  color: var(--color2-dark);
+  background-color: var(--color1);
+  border: 2px solid var(--color2-dark);
+  margin-bottom: 15px;
+}
+
+.action-interface {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+button {
+  background-color: var(--board-color);
+  padding: 5px 15px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  color: var(--tile-color);
+  font-size: 18px;
+  transition: 0.1s all ease-in-out;
+  margin-right: 20px;
+}
+
+button:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+  background-color: var(--color1-dark);
+}
